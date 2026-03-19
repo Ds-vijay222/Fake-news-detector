@@ -2,7 +2,6 @@ import streamlit as st
 import pickle
 import re
 import string
-from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -236,24 +235,6 @@ if st.button("🔍 ANALYZE NEWS", use_container_width=True):
             st.progress(float(real_prob/100))
             st.markdown(f"**{real_prob:.1f}%**")
         
-        
-        # Word Cloud
-        
-        st.markdown("### ☁️ Key Words in Article")
-        
-        wordcloud = WordCloud(
-            width=800,
-            height=300,
-            background_color='#0E1117',
-            colormap='RdYlGn' if prediction == 1 else 'Reds',
-            max_words=50
-        ).generate(cleaned)
-        
-        fig2, ax = plt.subplots(figsize=(10, 4))
-        fig2.patch.set_facecolor('#0E1117')
-        ax.imshow(wordcloud, interpolation='bilinear')
-        ax.axis('off')
-        st.pyplot(fig2)
         
         
         # Recommendations
