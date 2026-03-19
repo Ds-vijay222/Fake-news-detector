@@ -3,6 +3,5 @@ pandas
 numpy
 scikit-learn
 xgboost
-wordcloud==1.9.3
 matplotlib
 seaborn
