@@ -2,7 +2,6 @@ import streamlit as st
 import pickle
 import re
 import string
-import plotly.graph_objects as go
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import numpy as np
