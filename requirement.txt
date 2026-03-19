@@ -4,6 +4,6 @@ numpy
 scikit-learn
 xgboost
 wordcloud
-plotly
+plotly==5.18.0
 matplotlib
 seaborn
