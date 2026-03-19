@@ -218,32 +218,8 @@ if st.button("🔍 ANALYZE NEWS", use_container_width=True):
                 """, unsafe_allow_html=True)
         
         with col4:
-            # Gauge Chart
-            fig = go.Figure(go.Indicator(
-                mode="gauge+number",
-                value=confidence,
-                title={'text': "Confidence %"},
-                gauge={
-                    'axis': {'range': [0, 100]},
-                    'bar': {'color': "#FF6B6B" if prediction == 0 else "#56CCF2"},
-                    'steps': [
-                        {'range': [0, 50], 'color': "#1E2130"},
-                        {'range': [50, 75], 'color': "#2D3250"},
-                        {'range': [75, 100], 'color': "#363D5E"}
-                    ],
-                    'threshold': {
-                        'line': {'color': "white", 'width': 4},
-                        'thickness': 0.75,
-                        'value': confidence
-                    }
-                }
-            ))
-            fig.update_layout(
-                height=250,
-                paper_bgcolor='rgba(0,0,0,0)',
-                font={'color': 'white'}
-            )
-            st.plotly_chart(fig, use_container_width=True)
+                 st.metric("Confidence", f"{confidence:.1f}%")
+                 st.progress(float(confidence/100))
         
         
         # Probability Bars
